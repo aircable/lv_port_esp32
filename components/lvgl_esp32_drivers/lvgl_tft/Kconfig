@@ -286,11 +286,8 @@ menu "LVGL TFT Display controller"
 	    default 800 if LVGL_TFT_DISPLAY_CONTROLLER_FT81X
         default 128 if LVGL_PREDEFINED_DISPLAY_ATAG && LVGL_DISPLAY_ORIENTATION_PORTRAIT
         default 296 if LVGL_PREDEFINED_DISPLAY_ATAG && LVGL_DISPLAY_ORIENTATION_LANDSCAPE
-<<<<<<< HEAD
         default 80 if LVGL_PREDEFINED_DISPLAY_M5STICKC && (LVGL_DISPLAY_ORIENTATION_PORTRAIT || LVGL_DISPLAY_ORIENTATION_PORTRAIT_INVERTED)
         default 160 if LVGL_PREDEFINED_DISPLAY_M5STICKC && (LVGL_DISPLAY_ORIENTATION_LANDSCAPE || LVGL_DISPLAY_ORIENTATION_LANDSCAPE_INVERTED)
-=======
->>>>>>> Busy pin config
         default 320
 
     config LVGL_DISPLAY_HEIGHT
@@ -480,7 +477,7 @@ menu "LVGL TFT Display controller"
             range 0 39
             depends on LVGL_DISPLAY_USE_DC
             default 19 if LVGL_PREDEFINED_PINS_38V1
-            default 17 if LVGL_PREDEFINED_PINS_38V4
+            default 17 if LVGL_PREDEFINED_PINS_38V4 || LVGL_PREDEFINED_DISPLAY_ATAG
             default 27 if LVGL_PREDEFINED_DISPLAY_M5STACK || LVGL_PREDEFINED_DISPLAY_M5STICK
             default 23 if LVGL_PREDEFINED_DISPLAY_M5STICKC
             default 21 if LVGL_PREDEFINED_DISPLAY_WROVER4
@@ -507,14 +504,13 @@ menu "LVGL TFT Display controller"
 
             help
                 Configure the display Reset pin here.
-                
+
         config LVGL_DISP_PIN_BUSY
             int "GPIO for Busy" if LVGL_TFT_DISPLAY_PROTOCOL_SPI
             range 0 39
             default 35 if LVGL_TFT_DISPLAY_CONTROLLER_IL3820
             default 35
 
-<<<<<<< HEAD
         config LVGL_DISP_PIN_BUSY
             int "GPIO for Busy" if LVGL_TFT_DISPLAY_CONTROLLER_IL3820
             range 0 39
@@ -544,10 +540,6 @@ menu "LVGL TFT Display controller"
                 If enabled, a value of 1 will be sent to the display to enable the backlight,
                 otherwise a 0 will be expected to enable it.
 
-=======
-            help
-                Configure the display Busy pin here.
->>>>>>> Busy pin config
         config LVGL_DISP_PIN_BCKL
             int "GPIO for Backlight Control"
             depends on LVGL_ENABLE_BACKLIGHT_CONTROL

@@ -96,7 +96,9 @@ void guiTask(void *pvParameter) {
     disp_drv.rounder_cb = disp_driver_rounder;
     disp_drv.set_px_cb = disp_driver_set_px;
 #endif
-
+    disp_drv.hor_res = CONFIG_LVGL_DISPLAY_WIDTH;
+    disp_drv.ver_res = CONFIG_LVGL_DISPLAY_HEIGHT;
+    disp_drv.rotated = false;
     disp_drv.buffer = &disp_buf;
     lv_disp_drv_register(&disp_drv);
 
