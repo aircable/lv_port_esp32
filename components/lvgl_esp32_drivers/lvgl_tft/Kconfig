@@ -112,12 +112,12 @@ menu "LVGL TFT Display controller"
         bool
         help
             FT81x display controller.
-
+    
     config LVGL_TFT_DISPLAY_CONTROLLER_IL3820
         bool
         help
             IL3820 epaper display controller.
-
+            
     # Display controller communication protocol
     #
     # This symbols define the communication protocol used by the
@@ -198,17 +198,17 @@ menu "LVGL TFT Display controller"
             select LVGL_TFT_DISPLAY_CONTROLLER_SH1107
             select LVGL_TFT_DISPLAY_PROTOCOL_SPI
             select LVGL_TFT_DISPLAY_MONOCHROME
-        config LVGL_TFT_DISPLAY_USER_CONTROLLER_SSD1306
-            bool "SSD1306"
-            select LVGL_TFT_DISPLAY_CONTROLLER_SSD1306
-            select LVGL_TFT_DISPLAY_PROTOCOL_I2C
-            select LVGL_TFT_DISPLAY_MONOCHROME
-        config LVGL_TFT_DISPLAY_USER_CONTROLLER_FT81X
-            bool "FT81X"
-            select LVGL_TFT_DISPLAY_CONTROLLER_FT81X
-            select LVGL_TFT_DISPLAY_PROTOCOL_SPI
-        config LVGL_TFT_DISPLAY_USER_CONTROLLER_IL3820
-            bool "IL3820"
+	config LVGL_TFT_DISPLAY_USER_CONTROLLER_SSD1306
+		bool "SSD1306"
+			select LVGL_TFT_DISPLAY_CONTROLLER_SSD1306
+			select LVGL_TFT_DISPLAY_PROTOCOL_I2C
+			select LVGL_TFT_DISPLAY_MONOCHROME
+	config LVGL_TFT_DISPLAY_USER_CONTROLLER_FT81X
+		bool "FT81X"
+			select LVGL_TFT_DISPLAY_CONTROLLER_FT81X
+			select LVGL_TFT_DISPLAY_PROTOCOL_SPI
+	config LVGL_TFT_DISPLAY_USER_CONTROLLER_IL3820
+	    bool "IL3820"
             select LVGL_TFT_DISPLAY_CONTROLLER_IL3820
             select LVGL_TFT_DISPLAY_PROTOCOL_SPI
             select LVGL_TFT_DISPLAY_MONOCHROME
