@@ -10,8 +10,7 @@ Monochrome support:
 
 Supported display controllers:
 
-## TFT
-
+- IL3820
 - ILI9341
 - ILI9488
 - ILI9486
