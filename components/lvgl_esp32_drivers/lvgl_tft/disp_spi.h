@@ -58,18 +58,11 @@ void disp_spi_add_device_config(spi_host_device_t host, spi_device_interface_con
 void disp_spi_transaction(const uint8_t *data, uint16_t length,
     disp_spi_send_flag_t flags, disp_spi_read_data *out, uint64_t addr);
 void disp_wait_for_pending_transactions(void);
-void disp_spi_acquire(void);
-void disp_spi_release(void);
+void disp_spi_acquire();
+void disp_spi_release();
+void disp_spi_send_data(const uint8_t * data, uint16_t length);
+void disp_spi_send_colors(const uint8_t * data, uint16_t length);
 
-inline void disp_spi_send_data(uint8_t *data, uint16_t length) {
-    disp_spi_transaction(data, length, DISP_SPI_SEND_POLLING, NULL, 0);
-}
-
-inline void disp_spi_send_colors(uint8_t *data, uint16_t length) {
-    disp_spi_transaction(data, length,
-        DISP_SPI_SEND_QUEUED | DISP_SPI_SIGNAL_FLUSH,
-        NULL, 0);
-}
 
 /**********************
  *      MACROS
