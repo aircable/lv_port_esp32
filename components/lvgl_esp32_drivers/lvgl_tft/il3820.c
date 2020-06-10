@@ -28,13 +28,13 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR TH
 /*********************
  *      INCLUDES
  *********************/
+#include "il3820.h"
+
 #include "disp_spi.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-
-#include "il3820.h"
 
 /*********************
  *      DEFINES
