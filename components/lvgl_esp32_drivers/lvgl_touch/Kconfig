@@ -140,7 +140,7 @@ menu "LittlevGL (LVGL) Touch controller"
       visible if LVGL_TOUCH_CONTROLLER = 1 || LVGL_TOUCH_CONTROLLER = 3
       	choice
     		prompt "Touch Controller SPI Bus."
-    		default LVGL_TOUCH_CONTROLLER_SPI_VSPI
+    		default LVGL_TOUCH_CONTROLLER_SPI_HSPI
     		help
     			Select the SPI Bus the TFT Display is attached to.
     	

@@ -18,10 +18,10 @@
 /*********************
  *      DEFINES
  *********************/
-#if CONFIG_LVGL_TOUCH_CONTROLLER_SPI_HSPI == 1
-#define TOUCH_SPI_HOST HSPI_HOST
-#else
+#if CONFIG_LVGL_TOUCH_CONTROLLER_SPI_VSPI == 1
 #define TOUCH_SPI_HOST VSPI_HOST
+#else
+#define TOUCH_SPI_HOST HSPI_HOST
 #endif
 
 /**********************
