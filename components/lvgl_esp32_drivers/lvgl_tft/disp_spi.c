@@ -195,15 +195,3 @@ inline void disp_spi_send_colors(const uint8_t * data, uint16_t length)
 {
 	disp_spi_transaction(data, length, DISP_SPI_SEND_QUEUED | DISP_SPI_SIGNAL_FLUSH, NULL, 0);
 }
-
-
-inline void disp_spi_send_data(const uint8_t * data, uint16_t length)
-{
-	disp_spi_transaction(data, length, DISP_SPI_SEND_POLLING, NULL, 0);
-}
-
-
-inline void disp_spi_send_colors(const uint8_t * data, uint16_t length)
-{
-	disp_spi_transaction(data, length, DISP_SPI_SEND_QUEUED | DISP_SPI_SIGNAL_FLUSH, NULL, 0);
-}
